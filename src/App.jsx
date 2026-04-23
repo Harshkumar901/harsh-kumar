@@ -24,7 +24,7 @@ const projects = [
     id: "motion-detection",
     title: "Smart Camera Motion Detection",
     period: "Oct 2025 – Dec 2025",
-    stack: ["Python", "OpenCV"],
+    stack: ["Python", "OpenCV","YOLOv8 Model"],
     description:
       "A real-time computer vision system that detects movement through webcam input using frame differencing and contour-based motion analysis.",
     points: [
@@ -32,26 +32,28 @@ const projects = [
       "Real-time webcam processing using Python and OpenCV",
       "Designed for surveillance and automated monitoring use cases",
     ],
-    github: "https://github.com/Harshkumar901",
+    github: "https://github.com/Harshkumar901/intelligent-threat-scoring-surveillance---prototype",
     live: "#",
     type: "vision",
   },
+  
   {
-    id: "shadowchat",
-    title: "ShadowChat",
-    period: "Ongoing",
-    stack: ["React", "Firebase", "Android Studio"],
-    description:
-      "A privacy-focused messaging application built around secure authentication, real-time communication, and a scalable cloud-backed architecture.",
-    points: [
-      "Secure user authentication with Firebase",
-      "Real-time chat functionality and cloud storage",
-      "Mobile-friendly UI with scalable backend structure",
-    ],
-    github: "https://github.com/Harshkumar901",
-    live: "#",
-    type: "chat",
-  },
+  id: "shadowchat",
+  title: "ShadowChat",
+  period: "Ongoing",
+  stack: ["Flutter", "Dart", "Firebase"],
+  description:
+    "A privacy-focused messaging application built with Flutter and Firebase, designed around secure authentication, real-time communication, and a scalable feature-first architecture.",
+  points: [
+    "Secure authentication and real-time chat powered by Firebase",
+    "Feature-first Flutter architecture for scalability and easier maintenance",
+    "Focused on clean UI, smooth navigation, and privacy-oriented messaging flows",
+  ],
+  github: "YOUR_SHADOWCHAT_REPO_LINK_HERE",
+  live: "#",
+  type: "chat",
+  image: "/shadowchat-preview.png",
+},
   {
     id: "astro",
     title: "Astro Website",
@@ -75,21 +77,21 @@ const certificates = [
   {
     title: "Responsive Web Design",
     issuer: "freeCodeCamp",
-    date: "2026",
+    date: "2023",
     category: "Web & Full Stack",
     link: "https://drive.google.com/file/d/1n47_w0CVf1H-BqJj2wj2F632uadbV6bV/view?usp=sharing",
   },
   {
     title: "Net Full Stack Foundation",
     issuer: "Coursera",
-    date: "2026",
+    date: "2025",
     category: "Web & Full Stack",
     link: "https://coursera.org/share/b2d77f305230bf89b28130a97a3a41f5",
   },
   {
     title: "Full Stack Mastery with C# / .NET",
     issuer: "Chandigarh University",
-    date: "2026",
+    date: "2025",
     category: "Web & Full Stack",
     link: "https://drive.google.com/file/d/1NM1LckKP8TFONkvY5LRUftsoBicgR0NF/view?usp=sharing",
   },
@@ -153,10 +155,17 @@ const certificates = [
   {
     title: "Cloud Computing",
     issuer: "NPTEL",
-    date: "2026",
+    date: "2025",
     category: "Cloud & Systems",
     link: "https://drive.google.com/file/d/1V-3kcKDv7SFNKMpyctXDfyLsu1zNy04S/view?usp=sharing",
   },
+  {
+  title: "Guidewire DEVTrails University Hackathon 2026",
+  issuer: "Guidewire",
+  date: "2026",
+  category: "Hackathons & Achievements",
+  link: "https://guidewiredevtrails.com/user/el-participation-certificate/6998724aa8a33GWDT261771598410",
+},
 
   // Leadership
   {
@@ -169,8 +178,8 @@ const certificates = [
 ];
 
 const skills = {
-  Languages: ["C++", "Python", "SQL", "HTML5", "CSS3"],
-  Tools: ["React", "Firebase", "MySQL", "Git", "OpenCV", "Android Studio"],
+  Languages: ["C++", "Python", "SQL", "HTML5", "CSS3", "Dart"],
+  Tools: ["React","Flutter", "Firebase", "MySQL", "Git", "OpenCV", "Android Studio"],
   Strengths: ["Problem Solving", "Self-Learning", "Curiosity & Innovation", "Adaptability"],
 };
 
@@ -181,6 +190,7 @@ const certificateTabs = [
   "AI & Computer Vision",
   "Cybersecurity",
   "Cloud & Systems",
+  "Hackathons & Achievements",
   "Leadership",
 ];
 
@@ -193,9 +203,8 @@ function SectionTitle({ eyebrow, title, subtitle }) {
     </div>
   );
 }
-
 function ProjectVisual({ type, title, image }) {
-  if (type === "vision" && image) {
+  if (image) {
     return (
       <div className="relative h-44 overflow-hidden rounded-2xl border border-white/10 bg-black">
         <img
@@ -206,13 +215,15 @@ function ProjectVisual({ type, title, image }) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
         <div className="absolute left-3 top-3 flex flex-wrap gap-2">
           <span className="rounded-full border border-emerald-400/20 bg-emerald-500/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-emerald-200">
-            Live Execution
+            Project Preview
           </span>
           <span className="rounded-full border border-blue-400/20 bg-blue-500/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-blue-200">
             Real Screenshot
           </span>
         </div>
-        <div className="absolute bottom-3 left-4 text-[11px] uppercase tracking-[0.22em] text-zinc-300">{title}</div>
+        <div className="absolute bottom-3 left-4 text-[11px] uppercase tracking-[0.22em] text-zinc-300">
+          {title}
+        </div>
       </div>
     );
   }
@@ -231,7 +242,9 @@ function ProjectVisual({ type, title, image }) {
             <div className="h-2 w-20 rounded-full bg-purple-400/30" />
           </div>
         </div>
-        <div className="absolute bottom-3 left-4 text-[11px] uppercase tracking-[0.22em] text-zinc-400">{title}</div>
+        <div className="absolute bottom-3 left-4 text-[11px] uppercase tracking-[0.22em] text-zinc-400">
+          {title}
+        </div>
       </div>
     );
   }
@@ -249,7 +262,9 @@ function ProjectVisual({ type, title, image }) {
         <div className="absolute inset-0 flex items-center justify-center">
           <Sparkles className="text-cyan-200/80" size={30} />
         </div>
-        <div className="absolute bottom-3 left-4 text-[11px] uppercase tracking-[0.22em] text-zinc-400">{title}</div>
+        <div className="absolute bottom-3 left-4 text-[11px] uppercase tracking-[0.22em] text-zinc-400">
+          {title}
+        </div>
       </div>
     );
   }
@@ -262,10 +277,16 @@ function ProjectVisual({ type, title, image }) {
           <Cpu className="text-emerald-300" size={28} />
         </div>
       </div>
-      <div className="absolute bottom-3 left-4 text-[11px] uppercase tracking-[0.22em] text-zinc-400">Upload screenshot later</div>
+      <div className="absolute bottom-3 left-4 text-[11px] uppercase tracking-[0.22em] text-zinc-400">
+        Upload screenshot later
+      </div>
     </div>
   );
 }
+
+
+  
+
 
 function getIssuerBadgeClass(issuer) {
   if (issuer === "Coursera") {
@@ -279,6 +300,9 @@ function getIssuerBadgeClass(issuer) {
   }
   if (issuer === "Chandigarh University") {
     return "border-amber-400/20 bg-amber-500/10 text-amber-200";
+  }
+  if (issuer === "Guidewire") {
+    return "border-cyan-400/20 bg-cyan-500/10 text-cyan-200";
   }
   return "border-white/10 bg-white/5 text-zinc-300";
 }
@@ -428,7 +452,7 @@ export default function App() {
                   </div>
                   <div className="rounded-2xl border border-white/5 bg-black/20 p-4">
                     <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">Achievement</p>
-                    <p className="mt-2 text-sm text-zinc-300">Qualified CET Haryana Group C Examination</p>
+                    <p className="mt-2 text-sm text-zinc-300">Guidewire DEVTrails University Hackathon 2026 Participant</p>
                   </div>
                 </div>
               </div>
@@ -452,11 +476,11 @@ export default function App() {
           <div className="grid gap-6 lg:grid-cols-3">
             <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 lg:col-span-2">
               <p className="text-base leading-8 text-zinc-300 sm:text-lg">
-                I’m a 3rd-year B.Tech Computer Science student at Chandigarh University with a practical, build-first
-                mindset. I focus on creating useful systems — from responsive web applications with React and Firebase
-                to real-time computer vision projects using Python and OpenCV. I prefer clean structure, strong
-                execution, and functional engineering over unnecessary complexity.
-              </p>
+  I’m a 3rd-year B.Tech Computer Science student at Chandigarh University, focused on building practical and
+  impactful software projects. My work spans modern web development, mobile app development, and real-time
+  systems using React, Flutter, Firebase, Python, and OpenCV. I enjoy turning ideas into clean, functional,
+  and scalable solutions while continuously strengthening my development and problem-solving skills.
+</p>
             </div>
 
             <div className="grid gap-6">
@@ -468,7 +492,7 @@ export default function App() {
               <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
                 <Code2 className="mb-4 text-blue-300" size={22} />
                 <p className="text-sm text-zinc-400">Core Stack</p>
-                <p className="mt-2 text-sm font-medium text-white">React • Firebase • Python • OpenCV</p>
+                <p className="mt-2 text-sm font-medium text-white">React • Flutter • Firebase • Python • OpenCV</p>
               </div>
             </div>
           </div>
@@ -522,7 +546,7 @@ export default function App() {
                     <ProjectVisual
                       type={project.type}
                       title={project.title}
-                      image={project.type === "vision" ? SMART_CAMERA_IMAGE : null}
+                      image={project.image || (project.type === "vision" ? SMART_CAMERA_IMAGE : null)}
                     />
 
                     <div>
@@ -595,9 +619,7 @@ export default function App() {
                               </span>
                             )}
                           </div>
-                          <p className="mt-4 text-xs text-zinc-500">
-                            Replace GitHub profile links with exact project repositories when ready.
-                          </p>
+                          
                         </div>
                       </div>
                     </div>
@@ -688,10 +710,9 @@ export default function App() {
             <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
               <Award className="mb-4 text-blue-300" size={22} />
               <p className="text-sm text-zinc-400">Achievement</p>
-              <h3 className="mt-2 text-xl font-semibold text-white">Qualified CET Haryana Group C Examination</h3>
+              <h3 className="mt-2 text-xl font-semibold text-white">Guidewire DEVTrails University Hackathon 2026 Participant</h3>
               <p className="mt-3 text-sm leading-7 text-zinc-300">
-                Cleared the CET Haryana Group C examination, reflecting discipline, consistency, and the ability to
-                perform under competitive evaluation while continuing technical growth.
+                Participated in the Guidewire Hackathon, where I collaborated on building a solution within a limited timeframe, focusing on problem-solving, teamwork, and practical implementation. It was a valuable experience in applying technical skills under competitive and time-bound conditions.
               </p>
             </div>
           </div>
