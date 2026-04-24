@@ -210,7 +210,7 @@ function ProjectVisual({ type, title, image }) {
         <img
           src={image}
           alt={`${title} preview`}
-          className="h-full w-full object-cover transition duration-500 hover:scale-[1.03]"
+          className="h-full w-full object-contain transition duration-500 hover:scale-[1.02]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
         <div className="absolute left-3 top-3 flex flex-wrap gap-2">
