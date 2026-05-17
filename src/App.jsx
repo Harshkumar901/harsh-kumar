@@ -15,6 +15,7 @@ import {
   Sparkles,
   Shield,
   Cpu,
+  Hand,
 } from "lucide-react";
 
 const SMART_CAMERA_IMAGE = "/smart-camera-preview.png";
@@ -55,21 +56,21 @@ const projects = [
   image: "/shadowchat-preview.png",
 },
   {
-    id: "astro",
-    title: "Astro Website",
-    period: "Ongoing",
-    stack: ["React", "Firebase"],
-    description:
-      "A responsive astronomy-focused platform delivering educational content about celestial objects, space topics, and modern web-based learning experiences.",
-    points: [
-      "Dynamic content delivery with reusable React components",
-      "Responsive design for cross-device accessibility",
-      "Performance-focused structure for smooth browsing",
-    ],
-    github: "https://github.com/Harshkumar901",
-    live: "#",
-    type: "astro",
-  },
+  id: "ghostcontrol",
+  title: "Ghost Control",
+  period: "Concept / Experimental",
+  stack: ["Python", "OpenCV", "MediaPipe", "Gesture Recognition"],
+  description:
+    "An experimental gesture-based control system designed to interact with desktop environments using real-time hand tracking and motion recognition. The project focuses on creating intuitive, touchless human-computer interaction experiences.",
+  points: [
+    "Designed gesture-driven controls for navigation, volume adjustment, and application interaction",
+    "Focused on real-time hand tracking and motion recognition using computer vision",
+    "Explored innovative human-computer interaction concepts for future productivity systems",
+  ],
+  github: "#",
+  live: "#",
+  type: "ghost",
+},
 ];
 
 const certificates = [
@@ -248,6 +249,30 @@ function ProjectVisual({ type, title, image }) {
       </div>
     );
   }
+  if (type === "ghost") {
+  return (
+    <div className="relative h-44 overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-zinc-950 via-black to-cyan-950 p-4">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.15),transparent_60%)]" />
+
+      <div className="absolute inset-0 opacity-20 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:22px_22px]" />
+
+      <div className="relative flex h-full flex-col items-center justify-center gap-4">
+        <div className="rounded-3xl border border-cyan-400/20 bg-cyan-500/10 p-5 backdrop-blur-md">
+          <Hand className="text-cyan-200" size={34} />
+        </div>
+
+        <div className="space-y-2">
+          <div className="h-2 w-28 rounded-full bg-cyan-400/40" />
+          <div className="h-2 w-20 rounded-full bg-white/20" />
+        </div>
+      </div>
+
+      <div className="absolute bottom-3 left-4 text-[11px] uppercase tracking-[0.22em] text-zinc-400">
+        Gesture-Based System
+      </div>
+    </div>
+  );
+}
 
   if (type === "astro") {
     return (
@@ -385,14 +410,12 @@ export default function App() {
               <h1 className="max-w-4xl text-4xl font-semibold leading-tight tracking-tight text-white sm:text-6xl">
                 Harsh Kumar
                 <span className="mt-2 block text-2xl font-medium text-zinc-300 sm:text-3xl">
-                  B.Tech CSE Student • React & Python Developer
+                  B.E. CSE Student • Software Developer & Innovation Builder
                 </span>
               </h1>
 
               <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-400 sm:text-lg">
-                I build practical, performance-focused tech projects with a clean engineering mindset. My work is
-                centered around modern web applications, real-time systems, and computer vision — designed to be
-                functional, scalable, and sharp.
+                I build modern software systems, mobile applications, and real-time projects focused on clean execution, innovation, and practical impact. My work combines Flutter, Firebase, Python, and computer vision to create scalable and user-focused experiences.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -444,7 +467,7 @@ export default function App() {
                 <div className="space-y-4">
                   <div className="rounded-2xl border border-white/5 bg-black/20 p-4">
                     <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">Focus</p>
-                    <p className="mt-2 text-sm text-zinc-300">Web Development • Firebase Systems • Computer Vision</p>
+                    <p className="mt-2 text-sm text-zinc-300">Mobile Apps • Software Systems • Computer Vision</p>
                   </div>
                   <div className="rounded-2xl border border-white/5 bg-black/20 p-4">
                     <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">Leadership</p>
@@ -476,7 +499,7 @@ export default function App() {
           <div className="grid gap-6 lg:grid-cols-3">
             <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 lg:col-span-2">
               <p className="text-base leading-8 text-zinc-300 sm:text-lg">
-  I’m a 3rd-year B.Tech Computer Science student at Chandigarh University, focused on building practical and
+  I’m a B.E. Computer Science student at Chandigarh University, focused on building practical and
   impactful software projects. My work spans modern web development, mobile app development, and real-time
   systems using React, Flutter, Firebase, Python, and OpenCV. I enjoy turning ideas into clean, functional,
   and scalable solutions while continuously strengthening my development and problem-solving skills.
@@ -526,7 +549,7 @@ export default function App() {
         <section id="projects" className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
           <SectionTitle
             eyebrow="Projects"
-            title="Real builds. Clear execution."
+            title="Innovative projects built with practical engineering."
             subtitle="Click a project to expand details. Replace placeholder GitHub profile links with actual repository links when ready."
           />
 
